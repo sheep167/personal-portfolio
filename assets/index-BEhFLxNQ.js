@@ -1,0 +1,1 @@
+import{u as n,j as s}from"./index-CBmjZWxl.js";import{u as r,P as l}from"./post-card-DDWQdo1c.js";const c=()=>{const{t:o}=n(),t=r();return s.jsxs("div",{className:"flex flex-col gap-8",children:[s.jsxs("h1",{className:"text-4xl",children:[" ",o("Posts")," "]}),s.jsx("div",{className:"border rounded-lg",children:t.map((e,a)=>s.jsx(l,{...e},a))})]})},i=c;export{i as component};

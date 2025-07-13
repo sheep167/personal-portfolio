@@ -1,4 +1,4 @@
-import{c as ki,p as tr,j as G,u as rr,b as xi,B as bi}from"./index-BBG82VG4.js";/**
+import{c as ki,p as tr,j as G,u as rr,b as xi,B as bi}from"./index-CBmjZWxl.js";/**
  * @license @tabler/icons-react v3.34.0 - MIT
  *
  * This source code is licensed under the MIT license.

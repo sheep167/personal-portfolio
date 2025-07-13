@@ -11,6 +11,7 @@ import { i18nInit } from "./i18n";
 i18nInit();
 
 const router = createRouter({
+  basepath: "/personal-portfolio",
   routeTree,
 });
 

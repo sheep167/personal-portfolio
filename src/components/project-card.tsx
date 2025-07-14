@@ -27,7 +27,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
   const { t } = useTranslation();
 
   return (
-    <Card className="flex justify-between h-[420px]">
+    <Card className="flex justify-between">
       <CardHeader>
         <div className="flex flex-col gap-4">
           <div className="w-full h-[150px]">

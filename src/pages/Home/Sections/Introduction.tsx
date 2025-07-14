@@ -7,7 +7,7 @@ export const Introduction = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col justify-between md:flex-row-reverse">
+    <div className="flex flex-col justify-between gap-2 md:flex-row-reverse">
       <div>
         <img
           className="min-w-36 w-36 h-36 object-cover rounded-full object-center"

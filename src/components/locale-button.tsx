@@ -11,7 +11,7 @@ import { IconLanguage } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 
-export const LocaleButton = () => {
+export const LocaleButton = ({ iconOnly = false }: { iconOnly?: boolean }) => {
   const languageOptions = useLanguageOptions();
   const { t, i18n } = useTranslation();
 
@@ -24,9 +24,15 @@ export const LocaleButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="sm" variant="outline">
-          <IconLanguage /> {t("Language")}
-        </Button>
+        {iconOnly ? (
+          <Button size="icon" variant="outline">
+            <IconLanguage />
+          </Button>
+        ) : (
+          <Button size="sm" variant="outline">
+            <IconLanguage /> {t("Language")}
+          </Button>
+        )}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuRadioGroup

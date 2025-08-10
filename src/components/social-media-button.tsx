@@ -19,7 +19,7 @@ export const LinkedInButton = () => {
       variant="ghost"
       size="icon"
       onClick={() =>
-        window.open("https://www.linkedin.com/in/marc-yiu-718008207/", "_blank")
+        window.open("https://www.linkedin.com/in/marc-yiu/", "_blank")
       }
     >
       <IconBrandLinkedin />

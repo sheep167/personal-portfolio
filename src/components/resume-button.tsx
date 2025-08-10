@@ -8,7 +8,7 @@ export const ResumeButton = () => {
   const { t } = useTranslation();
 
   const handleDownload = () => {
-    saveAs(MyCV, "marc-cv.pdf");
+    saveAs(MyCV, "marc-yiu-cv.pdf");
   };
 
   return (

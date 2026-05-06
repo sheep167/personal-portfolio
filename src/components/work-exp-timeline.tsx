@@ -1,7 +1,7 @@
 import { Timeline, TimelineItem } from "./timeline";
-import VaradiseIcon from "@/assets/company/varadise_limited_logo.jpeg";
-import MeeoppIcon from "@/assets/company/meeopp_logo.jpeg";
-import SharpPeakIcon from "@/assets/company/sharp_peak_consulting_limited_logo.jpeg";
+import VaradiseIcon from "@/assets/company/varadise.jpeg";
+import MeeoppIcon from "@/assets/company/meeopp.jpeg";
+import SharpPeakIcon from "@/assets/company/sharp_peak.jpeg";
 import { useTranslation } from "react-i18next";
 
 export const WorkExpTimeline = () => {
@@ -16,20 +16,19 @@ export const WorkExpTimeline = () => {
         description="Software Engineer II"
         bullets={[
           t(
-            "Built and maintained a Centralized Management Platform from inception using React"
+            "Contributed as an early team member to Cosmos, a centralized SaaS management platform. Developed the frontend using React and MobX to support complex application workflows.",
           ),
           t(
-            "Developed a cross-system design system for web and native platforms, improving UI consistency and speeding up feature development"
+            "Took significant ownership of a flexible, customizable form system powering the Digital Works Supervision System (DWSS). Designed and implemented the backend with NestJS and MongoDB to enable dynamic, customer-specific workflows.",
           ),
           t(
-            "Worked with designers and product managers to refine features, ensuring full alignment with design specs and business goals"
+            "Revamped the form system powering DWSS, markedly improving its technical flexibility, performance, and long-term maintainability.",
           ),
           t(
-            "Designed a scalable backend service with NestJS, MongoDB, Prisma, and Docker"
+            "Implemented an internal design system and component library, enhancing UI consistency and accelerating feature development across the team.",
           ),
-          t("Integrated Camunda to create a robust workflow engine"),
           t(
-            "Customized SurveyJS library to deliver dynamic, tailored form functionality for complex business needs"
+            "Collaborated closely with designers and product managers through iterative feedback to deliver features aligned with design specifications and business objectives.",
           ),
         ]}
         skills={[
@@ -51,11 +50,13 @@ export const WorkExpTimeline = () => {
         description="Software Engineer"
         bullets={[
           t(
-            "Built and maintained an Ed-Tech web application using React, Express, and MongoDB"
+            "Built and maintained an Ed-Tech web application using React, Express, and MongoDB, handling full-cycle software design, development, and testing.",
           ),
-          t("Migrated middleware to GraphQL"),
-          t("Worked on deployment with Google Cloud"),
-          t("Setup data orchestration and pipelines using Dagster and Airbyte"),
+          t(
+            "Migrated middleware from Feathers.js to GraphQL, translating existing logic into improved architecture and documentation.",
+          ),
+          t("Deployed multiple applications with Google Cloud."),
+          t("Set up data pipelines using Dagster and Airbyte."),
         ]}
         skills={[
           "React",

@@ -29,6 +29,10 @@ export const Header = () => {
       to: "/posts",
     },
     {
+      label: t("Skills"),
+      to: "/skills",
+    },
+    {
       label: t("Contact"),
       to: "/contact",
     },
@@ -36,7 +40,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-10 bg-background/75 backdrop-blur-md">
-      <div className="mx-auto max-w-3xl px-8 py-6 flex flex-row justify-between">
+      <div className="mx-auto max-w-4xl px-6 sm:px-10 py-4 flex flex-row justify-between items-center">
         <NavigationMenu>
           <NavigationMenuList className="gap-6">
             {pages.map((page) => {

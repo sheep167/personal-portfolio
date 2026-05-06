@@ -12,9 +12,9 @@ export const RecentPosts = () => {
   const recentPosts = posts.slice(0, 2);
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex justify-between">
-        <h2 className="text-2xl font-semibold">{t("Posts")}</h2>
+    <div className="flex flex-col gap-4">
+      <div className="flex justify-between items-center">
+        <h2 className="text-3xl font-bold tracking-tight">{t("Posts")}</h2>
         <Button variant="link" onClick={() => navigate({ to: "/posts" })}>
           {t("View More")}
           <IconArrowRight />

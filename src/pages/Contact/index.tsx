@@ -56,14 +56,14 @@ export const ContactPage = () => {
     } catch (error) {
       console.error(error);
       toast.error(
-        t("Please try again later or try reaching with my social media")
+        t("Please try again later or try reaching with my social media"),
       );
     }
   };
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="text-4xl"> {t("Contact Me")} </h1>
+      <h1 className="text-4xl font-bold tracking-tight">{t("Contact Me")}</h1>
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -106,7 +106,7 @@ export const ContactPage = () => {
                 <FormControl>
                   <Textarea
                     placeholder={t(
-                      "Leave feedback about career opportunities, my works"
+                      "Leave feedback about career opportunities, my works",
                     )}
                     {...field}
                   />

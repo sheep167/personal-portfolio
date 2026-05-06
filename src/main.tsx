@@ -11,7 +11,6 @@ import { i18nInit } from "./i18n";
 i18nInit();
 
 const router = createRouter({
-  basepath: "/personal-portfolio",
   routeTree,
 });
 
@@ -26,5 +25,5 @@ createRoot(document.getElementById("root")!).render(
       <RouterProvider router={router} />
       <Toaster />
     </ThemeProvider>
-  </StrictMode>
+  </StrictMode>,
 );

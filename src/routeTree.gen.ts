@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SkillsRouteImport } from './routes/skills'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PostsIndexRouteImport } from './routes/posts/index'
 import { Route as PostsFirstPostRouteImport } from './routes/posts/first-post'
 
+const SkillsRoute = SkillsRouteImport.update({
+  id: '/skills',
+  path: '/skills',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
@@ -45,13 +51,15 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
+  '/skills': typeof SkillsRoute
   '/posts/first-post': typeof PostsFirstPostRoute
-  '/posts': typeof PostsIndexRoute
+  '/posts/': typeof PostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
+  '/skills': typeof SkillsRoute
   '/posts/first-post': typeof PostsFirstPostRoute
   '/posts': typeof PostsIndexRoute
 }
@@ -60,19 +68,33 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
+  '/skills': typeof SkillsRoute
   '/posts/first-post': typeof PostsFirstPostRoute
   '/posts/': typeof PostsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/projects' | '/posts/first-post' | '/posts'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/projects'
+    | '/skills'
+    | '/posts/first-post'
+    | '/posts/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/projects' | '/posts/first-post' | '/posts'
+  to:
+    | '/'
+    | '/contact'
+    | '/projects'
+    | '/skills'
+    | '/posts/first-post'
+    | '/posts'
   id:
     | '__root__'
     | '/'
     | '/contact'
     | '/projects'
+    | '/skills'
     | '/posts/first-post'
     | '/posts/'
   fileRoutesById: FileRoutesById
@@ -81,12 +103,20 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
+  SkillsRoute: typeof SkillsRoute
   PostsFirstPostRoute: typeof PostsFirstPostRoute
   PostsIndexRoute: typeof PostsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/skills': {
+      id: '/skills'
+      path: '/skills'
+      fullPath: '/skills'
+      preLoaderRoute: typeof SkillsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects': {
       id: '/projects'
       path: '/projects'
@@ -111,7 +141,7 @@ declare module '@tanstack/react-router' {
     '/posts/': {
       id: '/posts/'
       path: '/posts'
-      fullPath: '/posts'
+      fullPath: '/posts/'
       preLoaderRoute: typeof PostsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
@@ -129,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
+  SkillsRoute: SkillsRoute,
   PostsFirstPostRoute: PostsFirstPostRoute,
   PostsIndexRoute: PostsIndexRoute,
 }

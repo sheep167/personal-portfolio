@@ -9,14 +9,13 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
   },
-  base: "/personal-portfolio/",
   plugins: [
-    react(),
-    tailwindcss(),
     tanstackRouter({
       target: "react",
       autoCodeSplitting: true,
     }),
+    react(),
+    tailwindcss(),
   ],
   resolve: {
     alias: {

@@ -5,8 +5,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <div className="mx-auto max-w-3xl flex flex-col px-8">
-        <main className="grow">{children}</main>
+      <div className="mx-auto max-w-4xl flex flex-col px-6 sm:px-10">
+        <main className="grow py-12">{children}</main>
       </div>
       <Footer />
     </>

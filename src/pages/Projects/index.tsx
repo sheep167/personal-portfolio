@@ -33,7 +33,9 @@ export const ProjectsPage = () => {
         path="/projects"
       />
       <div className="flex flex-col gap-8">
-        <h1 className="text-4xl font-bold tracking-tight">{t("My Projects")}</h1>
+        <h1 className="text-4xl font-bold tracking-tight">
+          {t("My Projects")}
+        </h1>
 
         <Tabs
           value={activeCategory}

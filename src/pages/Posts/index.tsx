@@ -1,4 +1,5 @@
-import { PostCard, usePosts } from "@/components/post-card";
+import { PostCard } from "@/components/post-card";
+import { usePosts } from "@/hooks/use-posts";
 import { useTranslation } from "react-i18next";
 import { PageSEO } from "@/components/page-seo";
 

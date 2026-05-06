@@ -3,11 +3,14 @@ import { CATEGORY_COLOR, type SkillCategory } from "./data";
 import { useCategoryLabels } from "@/hooks/use-skill-nodes";
 
 interface Props {
-  activeCategory: SkillCategory | null;
-  onCategoryClick: (cat: SkillCategory) => void;
+  activeCategory?: SkillCategory | null;
+  onCategoryClick?: (cat: SkillCategory) => void;
 }
 
-export const SkillLegend = ({ activeCategory, onCategoryClick }: Props) => {
+export const SkillLegend = ({
+  activeCategory = null,
+  onCategoryClick,
+}: Props) => {
   const categoryLabels = useCategoryLabels();
   return (
     <div className="flex flex-wrap gap-2">
@@ -18,7 +21,7 @@ export const SkillLegend = ({ activeCategory, onCategoryClick }: Props) => {
           <Badge
             key={cat}
             variant="outline"
-            onClick={() => onCategoryClick(cat)}
+            onClick={() => onCategoryClick?.(cat)}
             className="gap-1.5 text-xs font-medium cursor-pointer select-none transition-all duration-200"
             style={
               isActive

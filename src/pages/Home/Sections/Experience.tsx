@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { WorkExpTimeline } from "@/components/work-exp-timeline";
 import { useTranslation } from "react-i18next";
 
-export enum ExperienceType {
+enum ExperienceType {
   work = "Work",
   education = "Education",
 }

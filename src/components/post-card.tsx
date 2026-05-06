@@ -1,13 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
-import { useMemo } from "react";
-import { useTranslation } from "react-i18next";
-
-interface PostCardProps {
-  title: string;
-  summary: string;
-  date: string;
-  link: string;
-}
+import { type PostCardProps } from "@/hooks/use-posts";
 
 export const PostCard = (props: PostCardProps) => {
   const { title, summary, date, link } = props;
@@ -30,21 +22,4 @@ export const PostCard = (props: PostCardProps) => {
       </div>
     </div>
   );
-};
-
-export const usePosts = () => {
-  const { t } = useTranslation();
-
-  const posts = useMemo<PostCardProps[]>(() => {
-    return [
-      {
-        title: t("Launching my portfolio page"),
-        summary: t("Feel free to check my thoughts"),
-        date: t("Jul 13, 2025"),
-        link: "/posts/first-post",
-      },
-    ];
-  }, [t]);
-
-  return posts;
 };

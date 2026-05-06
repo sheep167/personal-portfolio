@@ -1,4 +1,5 @@
-import { PostCard, usePosts } from "@/components/post-card";
+import { PostCard } from "@/components/post-card";
+import { usePosts } from "@/hooks/use-posts";
 import { Button } from "@/components/ui/button";
 import { IconArrowRight } from "@tabler/icons-react";
 import { useNavigate } from "@tanstack/react-router";

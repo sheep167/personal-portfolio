@@ -72,63 +72,63 @@ export const ContactPage = () => {
       <div className="flex flex-col gap-8">
         <h1 className="text-4xl font-bold tracking-tight">{t("Contact Me")}</h1>
 
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="grid grid-cols-2 gap-2">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <div className="grid grid-cols-2 gap-2">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel> {t("Name")} </FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel> {t("Email")} </FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
             <FormField
               control={form.control}
-              name="name"
+              name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel> {t("Name")} </FormLabel>
+                  <FormLabel> {t("Message")} </FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Textarea
+                      placeholder={t(
+                        "Leave feedback about career opportunities, my works",
+                      )}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel> {t("Email")} </FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel> {t("Message")} </FormLabel>
-                <FormControl>
-                  <Textarea
-                    placeholder={t(
-                      "Leave feedback about career opportunities, my works",
-                    )}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <Button type="submit" className="w-full">
-            {t("Drop a message")}
-            <IconSend2 />
-          </Button>
-        </form>
-      </Form>
+            <Button type="submit" className="w-full">
+              {t("Drop a message")}
+              <IconSend2 />
+            </Button>
+          </form>
+        </Form>
       </div>
     </>
   );

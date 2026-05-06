@@ -28,7 +28,7 @@ export const useLanguageOptions = () => {
         description: t("Japanese"),
       },
     ];
-  }, []);
+  }, [t]);
 
   return languageOptions;
 };

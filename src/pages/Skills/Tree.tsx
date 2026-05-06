@@ -2,7 +2,13 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, useInView } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
-import { BASE_RADIUS, CATEGORY_COLOR, RADIUS_STEP, type SkillCategory, type SkillNode } from "./data";
+import {
+  BASE_RADIUS,
+  CATEGORY_COLOR,
+  RADIUS_STEP,
+  type SkillCategory,
+  type SkillNode,
+} from "./data";
 import { useSkillNodes } from "@/hooks/use-skill-nodes";
 import { SkillNodePopover } from "./NodePopover";
 import { SkillNodeDetail } from "./NodeDetail";
@@ -13,10 +19,10 @@ const SVG_H = 780;
 // ── component ────────────────────────────────────────────────────────────────
 
 interface Props {
-  activeCategory: SkillCategory | null;
+  activeCategory?: SkillCategory | null;
 }
 
-export const SkillTree = ({ activeCategory }: Props) => {
+export const SkillTree = ({ activeCategory = null }: Props) => {
   const { t } = useTranslation();
   const skillNodes = useSkillNodes();
 
@@ -139,8 +145,10 @@ export const SkillTree = ({ activeCategory }: Props) => {
               return (
                 <motion.line
                   key={i}
-                  x1={a.x} y1={a.y}
-                  x2={b.x} y2={b.y}
+                  x1={a.x}
+                  y1={a.y}
+                  x2={b.x}
+                  y2={b.y}
                   stroke="currentColor"
                   strokeWidth={2}
                   strokeDasharray="4 6"
@@ -157,7 +165,8 @@ export const SkillTree = ({ activeCategory }: Props) => {
             {skillNodes.map((node, i) => {
               const r = BASE_RADIUS + (node.proficiency - 1) * RADIUS_STEP;
               const color = CATEGORY_COLOR[node.category];
-              const isActive = !activeCategory || node.category === activeCategory;
+              const isActive =
+                !activeCategory || node.category === activeCategory;
 
               return (
                 <SkillNodePopover key={node.id} node={node}>
@@ -168,16 +177,17 @@ export const SkillTree = ({ activeCategory }: Props) => {
                     style={{ cursor: "pointer", outline: "none" }}
                     initial={{ scale: 0, opacity: 0 }}
                     animate={
-                      inView
-                        ? { scale: 1, opacity: isActive ? 1 : 0.15 }
-                        : {}
+                      inView ? { scale: 1, opacity: isActive ? 1 : 0.15 } : {}
                     }
                     transition={{
                       type: "spring",
                       stiffness: 260,
                       damping: 20,
                       delay: 0.3 + i * 0.05,
-                      opacity: { duration: 0.15, delay: activeCategory ? 0 : 0.3 + i * 0.05 },
+                      opacity: {
+                        duration: 0.15,
+                        delay: activeCategory ? 0 : 0.3 + i * 0.05,
+                      },
                     }}
                     whileHover={{ scale: 1.18 }}
                     onTap={() => openDetail(node)}

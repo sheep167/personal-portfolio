@@ -17,6 +17,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { useNavigate } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { PageSEO } from "@/components/page-seo";
 
 const EMAIL_SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID;
 const EMAIL_TEMPLATE_ID = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
@@ -62,8 +63,14 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="flex flex-col gap-8">
-      <h1 className="text-4xl font-bold tracking-tight">{t("Contact Me")}</h1>
+    <>
+      <PageSEO
+        title="Contact"
+        description="Get in touch with Marc Yiu — Full-Stack Software Engineer. Open to career opportunities, collaborations and feedback."
+        path="/contact"
+      />
+      <div className="flex flex-col gap-8">
+        <h1 className="text-4xl font-bold tracking-tight">{t("Contact Me")}</h1>
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -122,6 +129,7 @@ export const ContactPage = () => {
           </Button>
         </form>
       </Form>
-    </div>
+      </div>
+    </>
   );
 };
